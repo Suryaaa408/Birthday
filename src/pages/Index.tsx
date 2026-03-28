@@ -6,6 +6,9 @@ import Confetti from "@/components/Confetti";
 import GiftBox from "@/components/GiftBox";
 import FloatingEmoji from "@/components/FloatingEmoji";
 import BirthdayCake from "@/components/BirthdayCake";
+import MusicToggle from "@/components/MusicToggle";
+import PhotoSection from "@/components/PhotoSection";
+import { useBirthdayMusic } from "@/hooks/useBirthdayMusic";
 
 const BALLOON_COLORS = [
   "hsl(340, 82%, 62%)",
@@ -17,19 +20,19 @@ const BALLOON_COLORS = [
 ];
 
 const GIFTS = [
-  { message: "You light up every room you walk into. Never stop being you! ✨", emoji: "🌟", color: "hsl(340, 82%, 62%)" },
-  { message: "Your smile is the most beautiful thing in this whole world 💫", emoji: "😊", color: "hsl(45, 100%, 65%)" },
-  { message: "Someone thinks you're absolutely amazing... guess who? 🙈", emoji: "💝", color: "hsl(270, 60%, 70%)" },
-  { message: "May all your dreams come true this year and always! 🌈", emoji: "🦋", color: "hsl(190, 80%, 55%)" },
+  { message: "Priyanka, you light up every room you walk into. Never stop being you! ✨", emoji: "🌟", color: "hsl(340, 82%, 62%)" },
+  { message: "Your smile makes the whole world a better place 💫", emoji: "🐾", color: "hsl(45, 100%, 65%)" },
+  { message: "Someone thinks you're paw-sitively amazing... guess who? 🙈", emoji: "💝", color: "hsl(270, 60%, 70%)" },
+  { message: "May all your dreams come true — you deserve the universe! 🌈", emoji: "🦋", color: "hsl(190, 80%, 55%)" },
 ];
 
 const FLOATING_EMOJIS = [
-  { emoji: "⭐", x: 5, y: 15, delay: 0 },
-  { emoji: "🌸", x: 88, y: 10, delay: 0.5 },
-  { emoji: "💖", x: 92, y: 40, delay: 1 },
-  { emoji: "🎀", x: 3, y: 55, delay: 1.5 },
-  { emoji: "✨", x: 85, y: 70, delay: 2 },
-  { emoji: "🌙", x: 8, y: 80, delay: 2.5 },
+  { emoji: "🐱", x: 5, y: 15, delay: 0 },
+  { emoji: "🌸", x: 90, y: 10, delay: 0.5 },
+  { emoji: "🐶", x: 92, y: 40, delay: 1 },
+  { emoji: "🐾", x: 3, y: 55, delay: 1.5 },
+  { emoji: "✨", x: 87, y: 70, delay: 2 },
+  { emoji: "💖", x: 8, y: 80, delay: 2.5 },
 ];
 
 const Index = () => {
@@ -37,10 +40,12 @@ const Index = () => {
   const [poppedCount, setPoppedCount] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
   const [showSecret, setShowSecret] = useState(false);
+  const music = useBirthdayMusic();
 
   const handleStart = () => {
     setStage("party");
     setShowConfetti(true);
+    music.play();
     setTimeout(() => setShowConfetti(false), 3500);
   };
 
@@ -56,6 +61,7 @@ const Index = () => {
   return (
     <div className="min-h-screen overflow-hidden relative">
       {showConfetti && <Confetti />}
+      {stage === "party" && <MusicToggle isPlaying={music.isPlaying} onToggle={music.toggle} />}
 
       {/* Background decorations */}
       {FLOATING_EMOJIS.map((e, i) => (
@@ -83,9 +89,26 @@ const Index = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 200 }}
-              className="text-6xl md:text-8xl mb-6"
+              className="text-6xl md:text-8xl mb-4"
             >
               🎁
+            </motion.div>
+
+            <motion.div
+              className="flex gap-2 text-3xl mb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              {["🐶", "🐱", "🐾"].map((e, i) => (
+                <motion.span
+                  key={i}
+                  animate={{ y: [0, -8, 0], rotate: [0, 10, -10, 0] }}
+                  transition={{ delay: i * 0.2, duration: 2, repeat: Infinity }}
+                >
+                  {e}
+                </motion.span>
+              ))}
             </motion.div>
 
             <motion.h1
@@ -94,9 +117,9 @@ const Index = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Someone Special
+              Hey Priyanka!
               <br />
-              <span className="text-primary">Has a Birthday!</span>
+              <span className="text-primary">Something Awaits You 🎀</span>
             </motion.h1>
 
             <motion.p
@@ -105,7 +128,7 @@ const Index = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              A little surprise is waiting for you... 🎀
+              A little paw-some surprise is waiting... 🐾✨
             </motion.p>
 
             <motion.button
@@ -129,7 +152,7 @@ const Index = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              {["🎈", "🎂", "🎉", "💝", "🎈"].map((e, i) => (
+              {["🎈", "🐾", "🎉", "💝", "🎈"].map((e, i) => (
                 <motion.span
                   key={i}
                   className="text-2xl"
@@ -164,14 +187,22 @@ const Index = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.5, type: "spring" }}
               >
-                Happy Birthday! 🎉
+                Happy Birthday
               </motion.h1>
+              <motion.h2
+                className="font-display text-3xl md:text-5xl font-bold text-primary mt-1"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.7, type: "spring" }}
+              >
+                Priyanka! 🎉🐾
+              </motion.h2>
 
               <motion.p
                 className="font-body text-muted-foreground text-lg md:text-xl mt-3 max-w-lg mx-auto"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
+                transition={{ delay: 0.9 }}
               >
                 Pop the balloons & open the gifts! 🎈
               </motion.p>
@@ -216,12 +247,22 @@ const Index = () => {
               ))}
             </div>
 
+            {/* Photo Gallery Section */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              <PhotoSection />
+            </motion.div>
+
             {/* Secret message section */}
             <motion.div
-              className="mt-12 px-4 max-w-lg mx-auto text-center"
+              className="mt-8 px-4 max-w-lg mx-auto text-center"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2.5 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
               <motion.button
                 className="px-6 py-3 rounded-full font-display font-bold text-lg cartoon-shadow-lg transition-transform"
@@ -260,9 +301,13 @@ const Index = () => {
                       From Your Secret Admirer 🙈
                     </h2>
                     <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg">
-                      There's someone who thinks you're the most incredible person in the world.
+                      Dear Priyanka, there's someone who thinks you're the most incredible person in the world.
                       Someone who smiles every time they see you, whose day gets brighter just
-                      because you exist. You may not know who... but just know that you are
+                      because you exist. Your love for animals makes you even more beautiful — a heart
+                      that loves all creatures is the purest kind. 🐾
+                    </p>
+                    <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg mt-3">
+                      You may not know who... but just know that you are
                       deeply, quietly, <span className="text-primary font-semibold">secretly adored</span>. 💕
                     </p>
                     <motion.p
@@ -271,7 +316,7 @@ const Index = () => {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.5 }}
                     >
-                      Happy Birthday, beautiful soul! 🎂✨
+                      Happy Birthday, Priyanka! 🎂✨🐶🐱
                     </motion.p>
                   </motion.div>
                 )}
@@ -282,11 +327,11 @@ const Index = () => {
             <motion.div
               className="mt-12 text-center pb-8"
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 3 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
             >
               <p className="font-body text-muted-foreground text-sm">
-                Made with 💖 by someone who cares
+                Made with 💖 by someone who cares about you 🐾
               </p>
             </motion.div>
           </motion.div>
