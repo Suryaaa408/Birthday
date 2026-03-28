@@ -47,6 +47,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        candy: {
+          pink: "hsl(var(--candy-pink))",
+          coral: "hsl(var(--candy-coral))",
+          yellow: "hsl(var(--candy-yellow))",
+          mint: "hsl(var(--candy-mint))",
+          sky: "hsl(var(--candy-sky))",
+          lavender: "hsl(var(--candy-lavender))",
+          peach: "hsl(var(--candy-peach))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
