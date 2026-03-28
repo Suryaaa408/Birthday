@@ -1,17 +1,28 @@
 import { motion } from "framer-motion";
-import { Camera } from "lucide-react";
 import petsBirthday from "@/assets/pets-birthday.png";
 
+// ✅ Import your images
+import photo1 from "@/assets/photo1.png";
+import photo2 from "@/assets/photo2.jpeg";
+import photo3 from "@/assets/photo3.jpeg";
+
 const PhotoSection = () => {
+  // ✅ Image array
+  const images = [photo1, photo2, photo3];
+
+  // ✅ Frames mapped with images
   const frames = [
     { rotate: -5, label: "Add your photo 💕" },
     { rotate: 3, label: "Precious moments 🌸" },
     { rotate: -2, label: "Memories 🐾" },
-  ];
+  ].map((frame, index) => ({
+    ...frame,
+    img: images[index],
+  }));
 
   return (
     <section className="relative py-12 px-4">
-      {/* Heart background */}
+      {/* ❤️ Floating hearts background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {Array.from({ length: 20 }).map((_, i) => (
           <motion.div
@@ -38,6 +49,7 @@ const PhotoSection = () => {
         ))}
       </div>
 
+      {/* 🔤 Title */}
       <motion.div
         className="text-center mb-8 relative z-10"
         initial={{ opacity: 0, y: 20 }}
@@ -52,7 +64,7 @@ const PhotoSection = () => {
         </p>
       </motion.div>
 
-      {/* Pet illustration */}
+      {/* 🐶 Pet illustration */}
       <motion.div
         className="flex justify-center mb-8 relative z-10"
         initial={{ scale: 0, opacity: 0 }}
@@ -64,12 +76,10 @@ const PhotoSection = () => {
           src={petsBirthday}
           alt="Cute birthday pets"
           className="w-48 md:w-64 drop-shadow-lg"
-          width={1024}
-          height={1024}
         />
       </motion.div>
 
-      {/* Photo frames */}
+      {/* 🖼️ Photo frames */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto relative z-10">
         {frames.map((frame, i) => (
           <motion.div
@@ -82,16 +92,22 @@ const PhotoSection = () => {
             whileHover={{ scale: 1.05, rotate: 0 }}
           >
             <div className="bg-card rounded-2xl p-3 cartoon-shadow-lg border-2 border-border">
-              <div className="aspect-square rounded-xl bg-muted flex flex-col items-center justify-center gap-3 border border-dashed border-primary/30">
-                <motion.div
-                  animate={{ y: [0, -5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }}
-                >
-                  <Camera className="w-8 h-8 text-primary/40" />
-                </motion.div>
-                <p className="font-body text-muted-foreground text-sm text-center px-4">{frame.label}</p>
+              
+              {/* ✅ Image */}
+              <div className="aspect-square rounded-xl overflow-hidden border border-primary/30">
+                <img
+                  src={frame.img}
+                  alt={frame.label}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              {/* Decorative tape */}
+
+              {/* 📝 Caption */}
+              <p className="font-body text-muted-foreground text-sm text-center mt-2 px-2">
+                {frame.label}
+              </p>
+
+              {/* 🎀 Decorative tape */}
               <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-4 bg-secondary/80 rounded-sm rotate-1" />
             </div>
           </motion.div>
