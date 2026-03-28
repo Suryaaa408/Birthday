@@ -20,10 +20,10 @@ const BALLOON_COLORS = [
 ];
 
 const GIFTS = [
-  { message: "Priyanka, you light up every room you walk into. Never stop being you! ✨", emoji: "🌟", color: "hsl(340, 82%, 62%)" },
-  { message: "Your smile makes the whole world a better place 💫", emoji: "🐾", color: "hsl(45, 100%, 65%)" },
-  { message: "Someone thinks you're paw-sitively amazing... guess who? 🙈", emoji: "💝", color: "hsl(270, 60%, 70%)" },
-  { message: "May all your dreams come true — you deserve the universe! 🌈", emoji: "🦋", color: "hsl(190, 80%, 55%)" },
+  { message: "Priyanka! You're literally the coolest person ever. Don't let anyone tell you otherwise! 😎✨", emoji: "🌟", color: "hsl(340, 82%, 62%)" },
+  { message: "Every puppy and kitten in the world agrees — you're paw-some! 🐶🐱", emoji: "🐾", color: "hsl(45, 100%, 65%)" },
+  { message: "If being adorable was a sport, you'd win gold every single time 🥇🙈", emoji: "💝", color: "hsl(270, 60%, 70%)" },
+  { message: "This year is YOUR year! Go chase every dream like a puppy chases its tail 🌈🐕", emoji: "🦋", color: "hsl(190, 80%, 55%)" },
 ];
 
 const FLOATING_EMOJIS = [
@@ -298,17 +298,18 @@ const Index = () => {
                       💌
                     </motion.div>
                     <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
-                      From Your Secret Admirer 🙈
+                      From Someone Special 🙈💕
                     </h2>
                     <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg">
-                      Dear Priyanka, there's someone who thinks you're the most incredible person in the world.
-                      Someone who smiles every time they see you, whose day gets brighter just
-                      because you exist. Your love for animals makes you even more beautiful — a heart
-                      that loves all creatures is the purest kind. 🐾
+                      Heyy Priyanka! 🎉 Just wanted to say — you're honestly one of the most
+                      amazing people out there. Like, the way you care about every little fur baby
+                      you meet? That's the cutest thing ever! 🐾
                     </p>
                     <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg mt-3">
-                      You may not know who... but just know that you are
-                      deeply, quietly, <span className="text-primary font-semibold">secretly adored</span>. 💕
+                      There's someone out there who thinks you're absolutely
+                      incredible and gets happy just seeing you smile.
+                      Won't say who tho... 🤭 Just know you're
+                      <span className="text-primary font-semibold"> really really special</span> to someone! 💕
                     </p>
                     <motion.p
                       className="mt-4 font-display text-primary font-bold text-lg"
@@ -316,7 +317,7 @@ const Index = () => {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.5 }}
                     >
-                      Happy Birthday, Priyanka! 🎂✨🐶🐱
+                      Have the best birthday everrr! 🎂🥳🐶🐱
                     </motion.p>
                   </motion.div>
                 )}
