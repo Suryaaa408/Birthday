@@ -22,7 +22,7 @@ const BALLOON_COLORS = [
 const GIFTS = [
   { message: "Srawani! Warning: consuming this much biryani in one lifetime should be illegal. Please continue anyway. 🍛😋", emoji: "🍛", color: "hsl(340, 82%, 62%)" },
   { message: "May your passport get so many stamps it needs its own passport. Go see the world, sis! ✈️🌍", emoji: "✈️", color: "hsl(45, 100%, 65%)" },
-  { message: "Wishing you sweets sweeter than gulab jamun and a life with zero calories. One of those is possible. 🍬🤭", emoji: "🍰", color: "hsl(270, 60%, 70%)" },
+  { message: "Wishing you sweets sweeter than ras malai and a life with zero calories. One of those is possible. 🍬🤭", emoji: "🍰", color: "hsl(270, 60%, 70%)" },
   { message: "This year: chase big dreams, eat bigger portions, and become the absolute legend I already know you are. 🌟🥳", emoji: "🌟", color: "hsl(190, 80%, 55%)" },
 ];
 
