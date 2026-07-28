@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import foodBirthday from "@/assets/food-birthday.png";
 
-import photo1 from "@/assets/photo1.jpg";
-import photo2 from "@/assets/photo2.jpg";
-import photo3 from "@/assets/photo3.jpg";
+import photo1Asset from "@/assets/photo1.jpg.asset.json";
+import photo2Asset from "@/assets/photo2.jpg.asset.json";
+import photo3Asset from "@/assets/photo3.jpg.asset.json";
+
+const photo1 = photo1Asset.url;
+const photo2 = photo2Asset.url;
+const photo3 = photo3Asset.url;
 
 const PhotoSection = () => {
   const images = [photo1, photo2, photo3];
