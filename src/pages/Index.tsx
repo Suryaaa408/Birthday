@@ -20,19 +20,19 @@ const BALLOON_COLORS = [
 ];
 
 const GIFTS = [
-  { message: "Priyanka! You're literally the coolest person ever. Don't let anyone tell you otherwise! 😎✨", emoji: "🌟", color: "hsl(340, 82%, 62%)" },
-  { message: "Every puppy and kitten in the world agrees — you're paw-some! 🐶🐱", emoji: "🐾", color: "hsl(45, 100%, 65%)" },
-  { message: "If being adorable was a sport, you'd win gold every single time 🥇🙈", emoji: "💝", color: "hsl(270, 60%, 70%)" },
-  { message: "This year is YOUR year! Go chase every dream like a puppy chases its tail 🌈🐕", emoji: "🦋", color: "hsl(190, 80%, 55%)" },
+  { message: "Srawani! Warning: consuming this much biryani in one lifetime should be illegal. Please continue anyway. 🍛😋", emoji: "🍛", color: "hsl(340, 82%, 62%)" },
+  { message: "May your passport get so many stamps it needs its own passport. Go see the world, sis! ✈️🌍", emoji: "✈️", color: "hsl(45, 100%, 65%)" },
+  { message: "Wishing you sweets sweeter than gulab jamun and a life with zero calories. One of those is possible. 🍬🤭", emoji: "🍰", color: "hsl(270, 60%, 70%)" },
+  { message: "This year: chase big dreams, eat bigger portions, and become the absolute legend I already know you are. 🌟🥳", emoji: "🌟", color: "hsl(190, 80%, 55%)" },
 ];
 
 const FLOATING_EMOJIS = [
-  { emoji: "🐱", x: 5, y: 15, delay: 0 },
-  { emoji: "🌸", x: 90, y: 10, delay: 0.5 },
-  { emoji: "🐶", x: 92, y: 40, delay: 1 },
-  { emoji: "🐾", x: 3, y: 55, delay: 1.5 },
-  { emoji: "✨", x: 87, y: 70, delay: 2 },
-  { emoji: "💖", x: 8, y: 80, delay: 2.5 },
+  { emoji: "🍛", x: 5, y: 15, delay: 0 },
+  { emoji: "✈️", x: 90, y: 10, delay: 0.5 },
+  { emoji: "🍰", x: 92, y: 40, delay: 1 },
+  { emoji: "🍬", x: 3, y: 55, delay: 1.5 },
+  { emoji: "🌍", x: 87, y: 70, delay: 2 },
+  { emoji: "🥳", x: 8, y: 80, delay: 2.5 },
 ];
 
 const Index = () => {
@@ -100,7 +100,7 @@ const Index = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              {["🐶", "🐱", "🐾"].map((e, i) => (
+              {["🍛", "🍰", "✈️"].map((e, i) => (
                 <motion.span
                   key={i}
                   animate={{ y: [0, -8, 0], rotate: [0, 10, -10, 0] }}
@@ -117,9 +117,9 @@ const Index = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Hey Priyanka!
+              Hey Srawani!
               <br />
-              <span className="text-primary">Something Awaits You 🎀</span>
+              <span className="text-primary">A Little Surprise 🎀</span>
             </motion.h1>
 
             <motion.p
@@ -128,7 +128,7 @@ const Index = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              A little paw-some surprise is waiting... 🐾✨
+              From your favourite sibling (yes, me) — biryani-approved 🍛✨
             </motion.p>
 
             <motion.button
@@ -152,7 +152,7 @@ const Index = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
             >
-              {["🎈", "🐾", "🎉", "💝", "🎈"].map((e, i) => (
+              {["🎈", "🍛", "🎉", "✈️", "🎈"].map((e, i) => (
                 <motion.span
                   key={i}
                   className="text-2xl"
@@ -195,7 +195,7 @@ const Index = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.7, type: "spring" }}
               >
-                Priyanka! 🎉🐾
+                Srawani! 🎉🍛
               </motion.h2>
 
               <motion.p
@@ -204,7 +204,7 @@ const Index = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
               >
-                Pop the balloons & open the gifts! 🎈
+                Pop the balloons & unwrap the gifts! 🎈
               </motion.p>
             </motion.div>
 
@@ -298,18 +298,22 @@ const Index = () => {
                       💌
                     </motion.div>
                     <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
-                      From Someone Special 🙈💕
+                      A Note From Your Sibling 💌
                     </h2>
                     <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg">
-                      Heyy Priyanka! 🎉 Just wanted to say — you're honestly one of the most
-                      amazing people out there. Like, the way you care about every little fur baby
-                      you meet? That's the cutest thing ever! 🐾
+                      Happy birthday, Srawani! 🎉 I know I tease you a lot, but honestly — you're
+                      one of the kindest, happiest humans I've ever known. The way you find joy in
+                      a good plate of biryani, a new place, or just a random Tuesday? That's a
+                      superpower. 🍛✨
                     </p>
                     <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg mt-3">
-                      There's someone out there who thinks you're absolutely
-                      incredible and gets happy just seeing you smile.
-                      Won't say who tho... 🤭 Just know you're
-                      <span className="text-primary font-semibold"> really really special</span> to someone! 💕
+                      This year, I hope you travel to every place on your list, eat every dish
+                      that catches your eye, and go on to
+                      <span className="text-primary font-semibold"> achieve something huge </span>
+                      — the kind of thing that makes the whole family insufferably proud. 🌍🏆
+                    </p>
+                    <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg mt-3">
+                      Stay silly, stay happy, and please keep sharing your food. Mostly the food. 🤭
                     </p>
                     <motion.p
                       className="mt-4 font-display text-primary font-bold text-lg"
@@ -317,7 +321,7 @@ const Index = () => {
                       animate={{ opacity: 1 }}
                       transition={{ delay: 0.5 }}
                     >
-                      Have the best birthday everrr! 🎂🥳🐶🐱
+                      Have the best birthday ever! 🎂🥳🍛✈️
                     </motion.p>
                   </motion.div>
                 )}
@@ -332,7 +336,7 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <p className="font-body text-muted-foreground text-sm">
-                Made with 💖 by someone who cares about you 🐾
+                Made with 💖 by your sibling — extra biryani on the side 🍛
               </p>
             </motion.div>
           </motion.div>
