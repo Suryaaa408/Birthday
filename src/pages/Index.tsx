@@ -303,7 +303,7 @@ const Index = () => {
                     <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg">
                       Happy birthday, Srawani! 🎉 I know I tease you a lot, but honestly — you're
                       one of the kindest, happiest humans I've ever known. The way you find joy in
-                      a good plate of biryani, a new place, or just a random Tuesday? That's a
+                      a good plate of biryani, a new place, or just a random Wednesday? That's a
                       superpower. 🍛✨
                     </p>
                     <p className="font-body text-muted-foreground leading-relaxed text-base md:text-lg mt-3">
