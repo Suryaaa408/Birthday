@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import foodBirthday from "@/assets/food-birthday.png";
-import photo1 from "@/assets/photo1.jpg";
-import photo2 from "@/assets/photo2.jpg";
-import photo3 from "@/assets/photo3.jpg";
 
 const PhotoSection = () => {
-  const images = [photo1, photo2, photo3];
+  const images = [
+    "/WhatsApp Image 2026-07-28 at 11.12.55 PM.jpeg",
+    "/WhatsApp Image 2026-07-28 at 11.12.56 PM.jpeg",
+    "/WhatsApp Image 2026-07-28 at 11.12.57 PM.jpeg",
+  ];
 
   const frames = [
     { rotate: -5, label: "Biryani = life 🍛" },
